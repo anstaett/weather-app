@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +7,154 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url('/bg.jpg') no-repeat center center fixed;
+  color: white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.weather-container {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'VT323', monospace;
+
+}
+
+.input {
+  text-align: center; 
+}
+
+input::placeholder {
+  color: white;
+}
+
+input:focus {
+  outline: white;
+  border-color: white;
+}
+
+.info {
+  font-size: 2.5vw;
+}
+
+.weather-container button {
+  font-family: 'VT323', monospace;
+  width: 15vw; /* width is 20% of viewport width */
+  height: 5vh; /* height is 5% of viewport height */
+  min-width: 100px; /* minimum width */
+  min-height: 50px; /* minimum height */
+  font-size: 2em; /* this will set the font-size to be the same as the height of the button */
+  color: white;
+  background: transparent;
+  border: 2px solid white;
+}
+
+.weather-container button:hover {
+  font-family: 'VT323', monospace;
+  width: 15vw; /* width is 20% of viewport width */
+  height: 5vh; /* height is 5% of viewport height */
+  min-width: 100px; /* minimum width */
+  min-height: 50px; /* minimum height */
+  font-size: 2em; /* this will set the font-size to be the same as the height of the button */
+  color: rgb(0, 122, 189);
+  background: white;
+  border: 2px solid white;
+}
+
+.weather-container input[type="text"] {
+  font-family: 'VT323', monospace;
+  width: 30vw; /* width is 20% of viewport width */
+  height: 5vh; /* height is 5% of viewport height */
+  min-width: 200px; /* minimum width */
+  min-height: 50px; /* minimum height */
+  font-size: 2em; /* this will set the font-size to be the same as the height of the text box */
+  color: white;
+  background: transparent;
+  border: 2px solid white;
+}
+
+.weather-container h1 {
+  font-size: 5vw; /* Set header font size relative to viewport width */
+  margin-bottom: 2vh;
+  user-select: none;
+}
+
+.weather-container h2 {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  font-size: 2vw; /* Set header font size relative to viewport width */
+  user-select: none;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 15vw;
+  height: 5vh;
+  min-width: 100px;
+  min-height: 50px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(204, 204, 204, 0); 
+  transition: .4s;
+  border: 2px solid white;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 80%;
+  width: 40%;  /* updated width */
+  left: 4%;  /* updated left */
+  bottom: 10%;
+  background-color: white;
+  transition: .4s;
+  z-index: 2; /* set a higher z-index for the slider */
+}
+
+input:checked + .slider:before {
+  left: 56%;  /* updated to slide all the way to the right */
+}
+
+.slider-text {
+  position: absolute;
+  width: 50%;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2; /* set a lower z-index for the text */
+  font-size: 2vw;  /* Set font size relative to viewport width */
+
+}
+
+.slider-text.fahrenheit {
+  left: 5%;  /* updated to be at the start of the slider */
+  user-select: none;
+}
+
+.slider-text.celsius {
+  right: 5%;  /* updated to be at the end of the slider */
+  user-select: none;
+}
+
+.error{
+  font-size: 2em;
+  user-select: none;
+}
+
+.spacer {
+  height: 2vh; /* 10% of the viewport height */
 }
